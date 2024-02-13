@@ -1,0 +1,53 @@
+.rate{
+  box-shadow: var(--shadow);
+  padding: 20px;
+  width: 300px;
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+
+  &__title{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  &__body{
+    flex: 1 1 auto;
+  }
+  &__price{
+    font-size: 55px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  &__month{
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    li{
+      color: var(--color-btn);
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      align-items: start;
+      gap: 10px;
+      span{
+        font-size: 1rem;
+        color: var(--color-text);
+        line-height: 20px;
+      }
+    }
+  }
+  button {
+
+
+  }
+
+}

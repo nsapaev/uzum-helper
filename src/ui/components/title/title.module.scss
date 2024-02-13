@@ -1,0 +1,14 @@
+.title{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  span{
+    font-family: var(--fontFamily-decor);
+  }
+}
+@media(max-width: 550px) {
+  .title{
+    font-size: 25px;
+  }
+}

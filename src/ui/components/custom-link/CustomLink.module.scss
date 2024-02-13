@@ -1,0 +1,40 @@
+.btn {
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+  @media(min-width: 500px) {
+    padding: 10px 30px;
+  }
+
+  span {
+    transition: var(--transition);
+  }
+
+  &::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--color-btn);
+    left: 0;
+    bottom: 0;
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+
+    }
+
+    span {
+      color: black;
+    }
+  }
+
+
+}

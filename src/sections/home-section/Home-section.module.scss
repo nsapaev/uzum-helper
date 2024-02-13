@@ -1,0 +1,156 @@
+@keyframes title {
+    from {
+        height: 120%;
+        width: 100%;
+    }
+    to {
+        height: 0;
+        width: 100%;
+    }
+}
+
+@keyframes dash {
+    from {
+        height: 100%;
+        width: 100%;
+    }
+    to {
+        height: 100%;
+        width: 0;
+    }
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding-top: 100px;
+    &__content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 50px;
+        align-items: center;
+
+    }
+
+    &__list {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 18px;
+
+            span {
+                color: var(--color-btn);
+            }
+        }
+    }
+
+    &__title {
+
+        font-family: var(--fontFamily-default);
+        font-size: 60px;
+        font-weight: 800;
+        position: relative;
+
+        &::before {
+            content: "";
+            animation-name: title;
+            position: absolute;
+            width: 100%;
+            height: 0;
+            bottom: -30px;
+            right: 0;
+            background: var(--color-bg);
+            animation-duration: 1s;
+
+        }
+
+        div {
+            z-index: -1;
+            position: relative;
+            display: inline-block;
+            color: var(--color-btn);
+
+            div {
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                bottom: -45%;
+                width: 95%;
+
+                &::before {
+                    content: "";
+                    animation-delay: 1s;
+                    animation-duration: 0.5s;
+                    animation-fill-mode: forwards;
+                    animation-name: dash;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    background: var(--color-bg);
+                    z-index: 2;
+                }
+
+                svg {
+                    z-index: -1;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    bottom: 0;
+                    display: inline-block;
+                }
+            }
+
+
+        }
+
+    }
+
+
+    @media(max-width: 1230px) {
+        &__title{
+            font-size: 45px;
+        }
+
+    }
+    @media(max-width: 998px) {
+        &__content {
+            grid-template-columns: 1.7fr 1.3fr;
+        }
+    }
+    @media(max-width: 768px) {
+        &{
+            height: auto;
+        }
+        &__content {
+            grid-template-columns: 1fr;
+        }
+        &__title{
+            text-align: center;
+            font-size: 35px;
+        }
+        &__infoBlock{
+            justify-self: center;
+        }
+
+    }
+    @media(max-width: 550px) {
+        &__title{
+            font-size: 25px;
+        }
+        button{
+            width: 100%;
+        }
+    }
+}
