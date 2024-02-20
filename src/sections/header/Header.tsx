@@ -1,19 +1,15 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import style from "./Header.module.scss";
 import {PiCodaLogoFill} from "react-icons/pi";
 import CustomLink from "../../ui/components/custom-link/CustomLink.js";
 import {SlLogin} from "react-icons/sl";
 import CustomButton from "../../ui/components/custom-button/Custom-button.js";
 import {Link} from "react-router-dom";
-import { useSpring, animated } from '@react-spring/web'
 
 export default function Header() {
     const [toggleBurgerBtn, setToggleBurgerBtn] = useState(false)
 
-    const handlerClickBtn = (bool) =>{
-
-
-
+    const handlerClickBtn = (bool:boolean) =>{
         setToggleBurgerBtn(bool)
     }
 
