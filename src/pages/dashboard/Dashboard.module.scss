@@ -1,1 +1,29 @@
 
+.dashboard{
+  background: var(--color-other);
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+            "nav header header"
+            "nav main main"
+            "nav main main"
+;
+
+
+  header{
+    grid-area: header;
+    background: var(--color-bg);
+  }
+  main{
+    grid-area: main;
+
+  }
+  nav{
+    grid-area: nav;
+    min-height: 100vh;
+    background: radial-gradient(circle, rgba(24,0,36,1) 0%, rgba(123,0,211,1) 0%, rgba(56,0,157,1) 100%);
+  }
+
+}
+
