@@ -14,6 +14,31 @@
   header{
     grid-area: header;
     background: var(--color-bg);
+    box-shadow: var(--shadow-foe-whiteBlocks);
+    display: flex;
+    align-items: center;
+
+    .header__container{
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      flex: 0 0 100%;
+    }
+    .header__body{
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      .header__logo{
+        font-size: 35px;
+        color: var(--color-orange);
+      }
+      .header__user{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 12px;
+      }
+    }
   }
   main{
     grid-area: main;

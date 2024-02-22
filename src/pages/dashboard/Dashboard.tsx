@@ -1,7 +1,7 @@
 import style from './Dashboard.module.scss'
 import {Outlet} from "react-router-dom";
 import SidebarDashboard from "./sidebar/Sidebar.tsx";
-import { FaUserCircle } from "react-icons/fa";
+import {FaUserCircle} from "react-icons/fa";
 
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
@@ -19,7 +19,6 @@ const styleModal = {
     width: 300,
     height: "100vh",
     bgcolor: 'background.paper',
-    border: '2px solid #000',
     boxShadow: 24,
     p: 4,
 };
@@ -32,11 +31,23 @@ export default function Dashboard() {
 
     return (
         <div className={style.dashboard}>
-                <header className={style.dashboard__header}> <div onClick={handleOpen}> <FaUserCircle/> </div> </header>
-                <nav className={style.dashboard__sidebar}>
-                    <SidebarDashboard/>
-                </nav>
-                <main className={style.dashboard__main}> main </main>
+            <header className={style.dashboard__header}>
+                <div className={style.header__container}>
+                    <div onClick={handleOpen} className={style.header__body}>
+                        <div className={style.header__logo} ><FaUserCircle/></div>
+                        <div className={style.header__user}>
+                            <div className={style.header__email}>example@gmail.com</div>
+                            <div className={style.header__balans}>Баланс 0 UZS</div>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+            <nav className={style.dashboard__sidebar}>
+                <SidebarDashboard/>
+            </nav>
+            <main className={style.dashboard__main}> main</main>
 
             <Outlet/>
 
@@ -46,7 +57,7 @@ export default function Dashboard() {
                 open={open}
                 onClose={handleClose}
                 closeAfterTransition
-                slots={{ backdrop: Backdrop }}
+                slots={{backdrop: Backdrop}}
                 slotProps={{
                     backdrop: {
                         timeout: 500,
@@ -58,7 +69,7 @@ export default function Dashboard() {
                         <Typography id="transition-modal-title" variant="h6" component="h2">
                             Text in a modal
                         </Typography>
-                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="transition-modal-description" sx={{mt: 2}}>
                             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                         </Typography>
                     </Box>
