@@ -1,0 +1,55 @@
+
+
+
+.userMenu{
+  color: black;
+  padding: 50px 0;
+
+  &__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+
+  }
+  &__logo{
+    font-size: 100px;
+    color: var(--color-orange);
+    align-self: center;
+  }
+  &__balans{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding: 20px 15px;
+    box-shadow: var(--shadow-foe-whiteBlocks);
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    li{
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex: 0 0 100%;
+      width: 100%;
+      cursor: pointer;
+      box-shadow: var(--shadow-foe-whiteBlocks);
+      padding: 10px;
+      border: 1px solid transparent;
+
+      &:hover{
+        svg{
+          color: var(--color-orange);
+        }
+      }
+    }
+  }
+
+}

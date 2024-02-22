@@ -21,18 +21,23 @@
   }
 
   &__listItem {
-    color: var(--color-bg);
+    color: rgb(250, 250,250,0.8);
     font-size: 16px;
+    border: 2px solid transparent;
+    &:hover{
+      color: var(--color-bg);
+    }
   }
 
 
 }
 
 .sidebar__listItem {
-  border: 2px solid transparent;
+
 
 }
 
 .sidebar__listItem.sidebar__listItem_active {
     border-bottom: 2px solid var(--color-orange);
+    color: var(--color-bg);
 }
