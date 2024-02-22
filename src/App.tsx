@@ -25,13 +25,13 @@ export default function App() {
                 <Route path={"/"} element={<MainPage/>}/>
                 <Route path={"/signin"} element={<Signin/>}/>
                 <Route path={"/dashboard"} element={<Dashboard/>}>
-                    <Route path={"/dashboard/main"} element={<MainDashboard/>}/>
-                    <Route path={"/dashboard/abs-analysis"} element={<AbsAnalysis/>}/>
-                    <Route path={"/dashboard/category-analysis"} element={<CategoryAnalysis/>}/>
-                    <Route path={"/dashboard/product-analysis"} element={<ProductAnalysis/>}/>
-                    <Route path={"/dashboard/seller-analysis"} element={<SellerAnalysis/>}/>
-                    <Route path={"/dashboard/store-analysis"} element={<StoreAnalysis/>}/>
-                    <Route path={"/dashboard/useful-tools"} element={<UsefulTools/>}/>
+                    <Route path={"main"} element={<MainDashboard/>}/>
+                    <Route path={"abs-analysis"} element={<AbsAnalysis/>}/>
+                    <Route path={"category-analysis"} element={<CategoryAnalysis/>}/>
+                    <Route path={"product-analysis"} element={<ProductAnalysis/>}/>
+                    <Route path={"seller-analysis"} element={<SellerAnalysis/>}/>
+                    <Route path={"store-analysis"} element={<StoreAnalysis/>}/>
+                    <Route path={"useful-tools"} element={<UsefulTools/>}/>
                 </Route>
             </Routes>
         </div>

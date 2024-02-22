@@ -47,9 +47,11 @@ export default function Dashboard() {
             <nav className={style.dashboard__sidebar}>
                 <SidebarDashboard/>
             </nav>
-            <main className={style.dashboard__main}> main</main>
+            <main className={style.dashboard__main}>
+                <Outlet/>
+            </main>
 
-            <Outlet/>
+
 
             <Modal
                 aria-labelledby="transition-modal-title"
