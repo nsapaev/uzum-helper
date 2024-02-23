@@ -1,8 +1,8 @@
 import style from './Dashboard.module.scss'
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import SidebarDashboard from "./sidebar/Sidebar.tsx";
 import {FaUserCircle} from "react-icons/fa";
-
+import { useSelector} from "react-redux";
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
@@ -10,6 +10,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import ModalUserMenu from "./modal-user-menu/ModalUserMenu.tsx";
 import {RootState} from "../../store";
+import {useEffect} from "react";
 
 
 
@@ -27,6 +28,17 @@ const styleModal = {
 };
 
 export default function Dashboard() {
+    const navigate = useNavigate()
+    const auth = useSelector<RootState>(state =>state.auth.auth)
+    console.log(auth)
+
+    useEffect(()=>{
+        if(!auth){
+            console.log("navigate")
+            navigate("/")
+        }
+
+    },[auth])
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);

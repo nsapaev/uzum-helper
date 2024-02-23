@@ -3,6 +3,10 @@ import {useNavigate} from "react-router-dom";
 import style from "./Signin.module.scss"
 import CustomButton from "../../ui/components/custom-button/Custom-button.tsx";
 import { MdKeyboardBackspace } from "react-icons/md";
+import {useDispatch, useSelector} from "react-redux";
+import {authorization} from "../../store/authSlice.ts";
+import {useEffect} from "react";
+import {RootState} from "../../store";
 
 type FormFields = {
     email: string
@@ -10,6 +14,17 @@ type FormFields = {
 }
 
 export default function Signin() {
+    const auth = useSelector<RootState>(state => state.auth.auth)
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        if(auth){
+            navigate("/dashboard")
+        }
+
+    },[auth])
+
+
     const navigate = useNavigate()
     const {
         register,
@@ -22,9 +37,14 @@ export default function Signin() {
     } = useForm<FormFields>()
     const onSubmit: SubmitHandler<FormFields> = async (data) => {
         try {
-            await new Promise((resolve) => setTimeout(resolve,1000))
             console.log(data)
-            throw new Error()
+            if(data.email === "admin@" && data.password === "12345678"){
+                dispatch(authorization({...data}))
+            }else {
+                throw new Error()
+            }
+
+
 
         }catch(error){
            setError("root",{

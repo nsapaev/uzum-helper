@@ -4,11 +4,16 @@ import {createSlice} from "@reduxjs/toolkit";
 const authReducer = createSlice({
     name: "auth",
     initialState: {
-        auth: true
+        auth: false
     },
     reducers: {
-        authorization(state){
+        authorization(state, action){
+
+            if(action.payload.email === "admin@" && action.payload.password ==="12345678"){
+                console.log(action)
                 state.auth = true
+            }
+
         }
     }
 })
